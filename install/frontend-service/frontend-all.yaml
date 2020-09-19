@@ -15,7 +15,7 @@ spec:
   selector:
     app: frontend
 ---
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: frontend-v1
@@ -24,6 +24,9 @@ metadata:
     version: v1
 spec:
   replicas: 1
+  selector:
+    matchLabels:
+      app: frontend
   template:
     metadata:
       labels:
@@ -37,7 +40,7 @@ spec:
         ports:
         - containerPort: 3000
 ---
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: frontend-v2
@@ -46,6 +49,9 @@ metadata:
     version: v2
 spec:
   replicas: 1
+  selector:
+    matchLabels:
+      app: frontend
   template:
     metadata:
       labels:
