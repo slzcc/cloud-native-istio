@@ -1,4 +1,4 @@
-apiVersion: flagger.app/v1alpha3
+apiVersion: flagger.app/v1beta1
 kind: Canary
 metadata:
   name: ad
@@ -18,7 +18,7 @@ spec:
     # Istio virtual service host names (optional)
     hosts:
     - ad
-  canaryAnalysis:
+  analysis:
     # schedule interval (default 60s)
     interval: 40s
     # max number of failed metric checks before rollback
