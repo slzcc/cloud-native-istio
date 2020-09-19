@@ -99,7 +99,7 @@ spec:
   selector:
     app: forecast
 ---
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: forecast-v1
@@ -108,6 +108,9 @@ metadata:
     version: v1
 spec:
   replicas: 1
+  selector:
+    matchLabels:
+      app: forecast
   template:
     metadata:
       labels:
